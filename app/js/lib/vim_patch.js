@@ -2,8 +2,11 @@ define(function(require, exports, module) {
     // Monkey patch vim mode
     var vimKeyBindings = require("ace/keyboard/vim");
 
-    var keepKeys = ["<C-e>", "<C-p>", "<C-f>", "<C-g>", "<C-[>", "<C-]>"];
-    
+    var keepKeys = [
+        "<C-e>", "<C-p>", "<C-f>", "<C-g>", "<C-[>", "<C-]>",
+        "<PageUp>", "<PageDown>"
+    ];
+
     function shouldKeepKey(key) {
       var res = _.find(keepKeys, function(keys) { return keys === key.keys; });
       return res !== undefined;
